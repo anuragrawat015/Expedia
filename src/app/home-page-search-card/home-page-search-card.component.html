@@ -1,0 +1,415 @@
+<div  class="myclass">
+
+<section  class="travel-box">
+              
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="single-travel-boxes">
+          <div id="desc-tabs" class="desc-tabs">
+  
+        <ul class="nav nav-tabs" role="tablist">
+  
+          <li role="presentation" class="active">
+             <a href="#tours" aria-controls="tours" role="tab" data-toggle="tab">
+               
+               Activities
+               <!-- <i class="fa fa-tree "></i> -->
+             </a>
+          </li>
+          
+  
+          <li role="presentation">
+            
+            <a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">
+              
+               hotels
+               <!-- <i class="fa fa-building"></i> -->
+               
+            </a>
+          </li>
+  
+          <li role="presentation">
+             <a href="#car" aria-controls="car" role="tab" data-toggle="tab">
+               
+                car
+                <!-- <i class="fa fa-plane "></i> -->
+             </a>
+          </li>
+        </ul>
+  
+        <!-- Tab panes -->
+        
+  
+  
+  <div class="tab-content">
+  
+    <div role="tabpanel" class="tab-pane active fade in" id="tours">
+      <div class="tab-para">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="single-tab-select-box">
+  
+              <h2>destination</h2>
+              <input 
+               [(ngModel)]="pickup_location_input"
+                (keyup)="getAns($event,'pickup')"
+                placeholder="Destination Location"
+                class="form-control"
+                id="select"
+                list="mylist"
+                autocomplete="off"
+              />
+              <div class="row mt-1 list-box" *ngIf="pickup_locations_loaded">
+
+
+               
+                <div class="alert alert-primary list-item"  *ngFor="let location of locations" (click)="chooseLocation($event.target,'pickup')" id={{location.key}}>
+   
+                      {{location.airport_code}} {{location.city_name}}    
+   
+               </div>
+   
+           </div>
+              <!-- <datalist id="mylist">
+                <div *ngFor="let r of data">
+                  <option value={{r.n}}>
+                </div>
+              </datalist>
+              <h3>{{DestinationLocation}}</h3> -->
+            
+  
+            </div><!--/.single-tab-select-box-->
+          </div><!--/.col-->
+  
+          <div class="col-lg-2 col-md-3 col-sm-4">
+            <div class="single-tab-select-box">
+              <h2>check in</h2>
+              
+                <p >
+                  <input [(ngModel)]="pickupDate" (change)="setVal()" type="date" name="check_in" class="form-control"  placeholder="12 -01 - 2017 ">
+                  
+                </p>
+                <h1>{{pickupDate}}</h1>
+              
+            </div><!--/.single-tab-select-box-->
+          </div><!--/.col-->
+  
+          <div class="col-lg-2 col-md-3 col-sm-4">
+            <div class="single-tab-select-box">
+              <h2>check out</h2>
+              
+                <p>
+                  <input [(ngModel)]="dropupDate" (change)="setVal()" type="date"  name="check_out" class="form-control"   placeholder="22 -01 - 2017 ">
+                </p>
+                <h1>{{dropupDate}}</h1>
+            </div><!--/.single-tab-select-box-->
+          </div><!--/.col-->
+  
+          
+  
+          
+  
+        </div><!--/.row-->
+  
+        <div class="row">
+          
+          <div class="clo-sm-7">
+            <div class="about-btn travel-mrt-0 pull-right">
+              <!-- <app-search></app-search> -->
+              <!-- <button (click)="getVal($event)" class="about-view travel-btn">
+                hello	
+              </button> -->
+              <button routerLink="/activitysearch" class="about-view travel-btn">
+                search	
+              </button>
+            </div><!--/.about-btn-->
+          </div><!--/.col-->
+  
+        </div><!--/.row-->
+  
+      </div><!--/.tab-para-->
+    
+    </div><!--/.tabpannel-->
+  
+    <div role="tabpanel" class="tab-pane fade in" id="hotels">
+      <div class="tab-para">
+  
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="single-tab-select-box">
+  
+              <h2>destination</h2>
+  
+              <input 
+              [(ngModel)]="pickup_location_input"
+                (keyup)="getAns($event,'pickup')"
+
+                placeholder="Destination Hotel"
+                class="form-control"
+                id="select"
+                autocomplete="off"
+              />
+              <div class="row mt-1 list-box" *ngIf="pickup_locations_loaded">
+
+
+               
+             <div class="alert alert-primary list-item"  *ngFor="let location of locations" (click)="chooseLocation($event.target,'pickup')" id={{location.key}}>
+
+                   {{location.airport_code}} {{location.city_name}}    
+
+            </div>
+
+        </div>
+              <!-- <datalist id="mylist" >
+                <div *ngFor="let r of data">
+                  <option  value={{r.n}}>
+                </div>
+              </datalist> -->
+  
+              
+  
+            </div><!--/.single-tab-select-box-->
+          </div><!--/.col-->
+  
+          <div class="col-lg-2 col-md-3 col-sm-4">
+            <div class="single-tab-select-box">
+              <h2>check in</h2>
+              <p >
+                <input [(ngModel)]="pickupDate" (change)="setVal()" type="date" name="check_in" class="form-control"  placeholder="12 -01 - 2017 ">
+                
+              </p>
+              <h1>{{pickupDate}}</h1>
+            </div><!--/.single-tab-select-box-->
+          </div><!--/.col-->
+  
+          <div class="col-lg-2 col-md-3 col-sm-4">
+            <div class="single-tab-select-box">
+              <h2>check out</h2>
+              <p>
+                <input [(ngModel)]="dropupDate" (change)="setVal()" type="date"  name="check_out" class="form-control"   placeholder="22 -01 - 2017 ">
+              </p>
+              <h1>{{dropupDate}}</h1>
+            </div><!--/.single-tab-select-box-->
+          </div><!--/.col-->
+  
+          
+  
+          <div class="col-lg-2 col-md-1 col-sm-4">
+            <div class="single-tab-select-box">
+              <h2>members</h2>
+              <div class="travel-select-icon">
+                <select class="form-control ">
+  
+                    <option value="default">1</option><!-- /.option-->
+  
+                    <option value="2">2</option><!-- /.option-->
+  
+                    <option value="4">4</option><!-- /.option-->
+                    <option value="8">8</option><!-- /.option-->
+  
+                </select><!-- /.select-->
+              </div><!-- /.travel-select-icon -->
+            </div><!--/.single-tab-select-box-->
+          </div><!--/.col-->
+  
+        </div><!--/.row-->
+  
+        <div class="row">
+          <div class="col-sm-5"></div><!--/.col-->
+          <div class="clo-sm-7">
+            <div class="about-btn travel-mrt-0 pull-right">
+              <!-- <app-searchhotel></app-searchhotel> -->
+              <button routerLink="/hotelsearch" class="about-view travel-btn">
+                search	
+              </button>
+              <!-- <button  class="about-view travel-btn">
+                
+              </button> -->
+            </div><!--/.about-btn-->
+          </div><!--/.col-->
+  
+        </div><!--/.row-->
+  
+      </div><!--/.tab-para-->
+    </div><!--/.tabpannel-->
+    
+    <div role="tabpanel" class="tab-pane fade in" id="car">
+      <div class="tab-para">
+        
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="single-tab-select-box">
+  
+              <h2>from</h2>
+              <input 
+              [(ngModel)]="pickup_location_input"
+                (keyup)="getAns($event,'pickup')"
+                placeholder="Pick up Location"
+                class="form-control"
+                id="select"
+                autocomplete="off"
+              />
+              <div class="row mt-1 list-box" *ngIf="pickup_locations_loaded">
+
+
+               
+                <div class="alert alert-primary list-item"  *ngFor="let location of locations" (click)="chooseLocation($event.target,'pickup')" id={{location.key}}>
+   
+                      {{location.airport_code}} {{location.city_name}}    
+   
+               </div>
+   
+           </div>
+              <!-- <datalist id="mylist">
+                <div *ngFor="let r of data">
+                  <option value={{r.n}}>
+                </div>
+              </datalist> -->
+            </div><!--/.single-tab-select-box-->
+          </div><!--/.col-->
+  
+          <div class="col-lg-2 col-md-3 col-sm-4">
+            <div class="single-tab-select-box">
+              <h2>departure</h2>
+             
+              <p >
+                <input [(ngModel)]="pickupDate" (change)="setVal()" type="date" name="check_in" class="form-control"  placeholder="12 -01 - 2017 ">
+                
+              </p>
+              <h1>{{pickupDate}}</h1>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4">
+            <div class="single-tab-select-box">
+              <h2>departure Time</h2>
+             
+              <p >
+                <input [(ngModel)]="pickupTime" (change)="setVal1()" type="time" name="check_in_time" class="form-control"  placeholder="10:00 ">
+                
+              </p>
+              <h1>{{pickupTime}}</h1>
+            </div>
+          </div>
+  
+          <div class="col-lg-2 col-md-3 col-sm-4">
+            <div class="single-tab-select-box">
+              <h2>return</h2>
+              <p>
+                <input [(ngModel)]="dropupDate" (change)="setVal()" type="date"  name="check_out" class="form-control"   placeholder="22 -01 - 2017 ">
+              </p>
+              <h1>{{dropupDate}}</h1>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4">
+            <div class="single-tab-select-box">
+              <h2>Return Time</h2>
+             
+              <p >
+                <input [(ngModel)]="dropupTime" (change)="setVal1()" type="time" name="check_out_time" class="form-control"  placeholder="10:00 ">
+                
+              </p>
+              <h1>{{dropupTime}}</h1>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-1 col-sm-4">
+            <div class="single-tab-select-box">
+              <h2>adults</h2>
+              <div class="travel-select-icon">
+                <select class="form-control ">
+  
+                    <option value="default">5</option><!-- /.option-->
+  
+                    <option value="10">10</option><!-- /.option-->
+  
+                    <option value="15">15</option><!-- /.option-->
+                    <option value="20">20</option><!-- /.option-->
+  
+                </select><!-- /.select-->
+              </div><!-- /.travel-select-icon -->
+            </div><!--/.single-tab-select-box-->
+          </div><!--/.col-->
+  
+          <div class="col-lg-2 col-md-1 col-sm-4">
+            <div class="single-tab-select-box">
+              <h2>childs</h2>
+              <div class="travel-select-icon">
+                <select class="form-control ">
+  
+                    <option value="default">1</option><!-- /.option-->
+  
+                    <option value="2">2</option><!-- /.option-->
+  
+                    <option value="4">4</option><!-- /.option-->
+                    <option value="8">8</option><!-- /.option-->
+  
+                </select><!-- /.select-->
+              </div><!-- /.travel-select-icon -->
+            </div><!--/.single-tab-select-box-->
+          </div><!--/.col-->
+  
+        </div><!--/.row-->
+  
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="single-tab-select-box">
+  
+              <h2>to</h2>
+  
+              <input
+              [(ngModel)]="drop_location_input"
+                (keyup)="getAns($event,'drop')"
+                placeholder="Drop Location"
+                class="form-control"
+                id="select"
+                autocomplete="off"
+              />
+              <div class="row mt-1 list-box" *ngIf="drop_locations_loaded">
+
+
+               
+                <div class="alert alert-primary list-item"  *ngFor="let location of locations" (click)="chooseLocation($event.target,'drop')" id={{location.key}}>
+   
+                      {{location.airport_code}} {{location.city_name}}    
+   
+               </div>
+   
+           </div>
+              <!-- <datalist id="mylist">
+                <div *ngFor="let r of data">
+                  <option value={{r.n}}>
+                </div>
+              </datalist> -->
+  
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-4">
+            
+          </div><!--/.col-->
+          <div class="clo-sm-5">
+            <div class="about-btn pull-right">
+              
+              <button routerLink="carsearch"  class="about-view travel-btn">
+                search	
+              </button>
+            </div><!--/.about-btn-->
+          </div><!--/.col-->
+          
+        </div><!--/.row-->
+  
+      </div>
+  
+    </div><!--/.tabpannel-->
+  
+  </div><!--/.tab content-->
+  </div><!--/.desc-tabs-->
+  </div><!--/.single-travel-box-->
+  </div><!--/.col-->
+  </div><!--/.row-->
+  </div>
+ 
+  
+  
+</section>
+</div>

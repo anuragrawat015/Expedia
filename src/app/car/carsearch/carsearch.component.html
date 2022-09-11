@@ -1,0 +1,88 @@
+<!-- <button class="about-view travel-btn" (click)="searchinit()">Search</button> -->
+<!--packages start-->
+<div *ngIf="!contentLoaded" class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div *ngIf="contentLoaded">
+  <section id="pack" class="packages">
+      <div class="container">
+          <div class="gallary-header text-center">
+              <h2>
+                  Search Results
+              </h2>
+
+          </div>
+          <!--/.gallery-header-->
+          <div class="packages-content">
+              <div class="row">
+                  <div *ngFor="let vehicle of finalresult">
+
+
+                      <div class="col-md-12 col-sm-6">
+                          <div class="single-package-item">
+                              <img src={{vehicle.images[0]}} alt="package-place">
+                              <div class="single-package-item-txt">
+                                  <h3>{{vehicle.name}}</h3>
+                                  
+                                  <div class="packages-para">
+                                      <p>
+                                          <span>
+                                              <i class="fa fa-angle-right"></i>
+                                          </span>
+                                          <strong>Passenger Capacity</strong>
+                                          {{ vehicle.passengerCapacity }}
+                                          <!-- <i class="fa fa-angle-right"></i>   -->
+                                      </p>
+                                      <p>
+                                          <span>
+                                              <i class="fa fa-angle-right"></i>
+                                          </span>
+                                          <strong>Baggage Capacity</strong>
+                                    {{  vehicle.baggageCapacity}}
+                                          <!-- <i class="fa fa-angle-right"></i>  food facilities -->
+                                      </p>
+                                      <p>
+                                          <span>
+                                              <i class="fa fa-angle-right"></i>
+                                          </span>
+                                          <strong>Baggage Capacity</strong>
+                                    {{  vehicle.baggageCapacity}}
+                                          <!-- <i class="fa fa-angle-right"></i>  food facilities -->
+                                      </p>
+                                      <p>
+                                          <span>
+                                              <i class="fa fa-angle-right"></i>
+                                          </span>
+                                          <strong>Type:</strong>
+                                    {{ vehicle.type }}
+                                          <!-- <i class="fa fa-angle-right"></i>  food facilities -->
+                                      </p>
+                                      <p>
+                                      <span><i class="fa fa-angle-right"></i></span>
+                                      <strong>Transmission:</strong> {{ vehicle.transmission }}
+                                  </p>
+                                  </div>
+                                 
+                              </div>
+                              <!--/.single-package-item-txt-->
+                          </div>
+                          
+
+                      </div>
+                      <!--/.col-->
+                  </div>
+
+
+
+              </div>
+              <!--/.row-->
+          </div>
+          <!--/.packages-content-->
+      </div>
+      <!--/.container-->
+
+  </section>
+  <!--/.packages-->
+  <!--packages end-->
+
+</div>

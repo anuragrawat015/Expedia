@@ -1,0 +1,71 @@
+<!-- 
+<div *ngIf="getresult().length>0">
+<section id="pack" class="packages">
+    <div class="container">
+        <div class="gallary-header text-center">
+            <h2>
+                Search Results
+            </h2>
+            
+        </div>
+        <div class="packages-content">
+            <div class="row">
+                <div *ngFor="let r of getresult()">
+                    
+                  
+                <div class="col-md-12 col-sm-6">
+                    <div class="single-package-item">
+                        <img src={{r.content.media.primaryImage.url}} alt="package-place">
+                        <div class="single-package-item-txt">
+                            <h3>{{r.name}}</h3>
+                            <h5>{{r.content.location.address.city.name}} , {{r.content.location.address.state.name}} , {{r.content.location.address.countryCode}}</h5>
+                            <div class="packages-para">
+                                <p>
+                                    <span>
+                                        <i class="fa fa-angle-right"></i> {{r.categories[0].name}}
+                                    </span>
+                                    
+                                </p>
+                                <p>
+                                    <span>
+                                        <i class="fa fa-angle-right"></i>  {{r.content.duration}}
+                                    </span>
+                                 </p>
+                                 <p>
+                                    <span>
+                                        <i class="fa fa-angle-right"></i> {{r.content.rating}} rating
+                                    </span>
+                                  
+                                 </p>
+                                 <p>
+                                    <span>
+                                        <i class="fa fa-angle-right"></i>  {{r.content.reviewCount}} review
+                                    </span>
+                                  
+                                 </p>
+                                
+                            </div>
+                            <div class="about-btn"><button  class="about-view packages-btn">
+                                Book at ${{r.displayFare.totalFareStartsFrom}}
+                            </button></div>
+                            <div class="about-btn">
+                                
+                                <button  class="about-view packages-btn">
+                                    book now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+                
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+</div> -->
