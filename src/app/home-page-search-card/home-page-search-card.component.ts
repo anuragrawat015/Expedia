@@ -15,10 +15,10 @@ export class HomePageSearchCardComponent {
   pickuplocations:LocationObject[]=[]
   droplocations:LocationObject[]=[]
 
-  pickupDate:any
-  dropupDate:any
-  pickupTime:any
-  dropupTime:any
+  pickupDate:any=""
+  dropupDate:any=""
+  pickupTime:any=""
+  dropupTime:any=""
   data : Carautosuggest[]|undefined;
   data1:any=""
   runAutoAPI:any=false
@@ -68,6 +68,7 @@ export class HomePageSearchCardComponent {
   //     console.log(this.pickupDate)
   //     console.warn("clinked")
   // }
+
   setVal()
   {
       this.service.pickupDate=this.pickupDate
@@ -82,9 +83,11 @@ export class HomePageSearchCardComponent {
       console.log(this.service.pickupTime)
       console.log(this.service.dropupTime)
   }
+
+  destinationinput:any
   getAns(event:any,flag:string)
   {
-
+    
     console.log(event.target.value)
 
     if(event.target.value.length>=3)
@@ -131,8 +134,8 @@ export class HomePageSearchCardComponent {
         // this.service.location_lat=result.s[0].lat
         // this.service.location_lng=result.s[0].lng
       
-        console.log(this.service.location_lat)
-        console.log(this.service.location_lng)
+        // console.log(this.service.location_lat)
+        // console.log(this.service.location_lng)
         this.data = result.s;
         if(flag=='drop')
         this.drop_locations_loaded=true

@@ -4,25 +4,47 @@ import { ComponentFixture, TestBed , fakeAsync ,  tick } from '@angular/core/tes
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { SearchComponent } from './search.component';
 import { ActivitySearchService } from './activity-search.service';
+import { ActivityModule } from '../activity.module';
 import { of } from 'rxjs';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { ActivityService } from 'src/app/services/activity/activity.service';
+// import { of } from 'rxjs';
+// import { ActivitySearchComponent } from './activity-search.component';
+// import {SearchComponent} from './search.component'
 
 describe('ActivitySearchComponent', () => {
   let component: SearchComponent;
   let fixture: ComponentFixture<SearchComponent>;
   let activityService : jasmine.SpyObj<ActivitySearchService> = jasmine.createSpyObj("ActivityService",["searchinit","searchstatus","searchresult"]);
-  beforeEach(async () => {
+  // beforeEach(async () => {
+  //   await TestBed.configureTestingModule({
+  //     imports : [HttpClientTestingModule,ActivityModule],
+  //     declarations: [ ActivitySearchService ],
+  //     providers : [
+  //       {
+  //         provide : ActivitySearchService,
+  //         useValue : activityService
+  //       }
+  //     ]
+  //   })
+  //   .compileComponents();
+  //   fixture = TestBed.createComponent(SearchComponent);
+  //   component = fixture.componentInstance;
+  //   fixture.detectChanges();
+  // });
+    beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [HttpClientTestingModule],
-      declarations: [ ActivitySearchService ],
+      declarations: [ SearchComponent ],
+      imports : [
+          HttpClientTestingModule,
+          ReactiveFormsModule,
+          FormsModule],
       providers : [
-        {
-          provide : ActivitySearchService,
-          useValue : activityService
-        }
+        ActivitySearchService
       ]
     })
     .compileComponents();
+    
     fixture = TestBed.createComponent(SearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -33,52 +55,11 @@ describe('ActivitySearchComponent', () => {
   });
 
   it('should call the activity search-init and send valid response',()=>{
-    let sampleBody = {
-      "searchQuery": {
-        "dateRange": {
-            "from": "2023-02-01T08:10:55.714Z",
-            "to": "2023-02-20T08:11:55.714Z"
-        },
-        "bounds": {
-            "circle": {
-                "center": {
-                    "lat": 33.39117,
-                    "long": -118.4165
-                },
-                "radiusKm": 48
-            }
-        },
-        "paxNationality": "IN",
-        "filters": {
-            "price": {},
-            "categories": [
-                "16",
-                "12",
-                "4",
-                "9"
-            ]
-        }
-    },
-    "customerInfo": {
-        "id": "AutoUser",
-        "availablePointBalance": 50000,
-        "transitCode": "802ef41b-1360-b989-77cf-9c4a62d7198c",
-        "eligibilityInfo": {
-            "programCurrency": "Points",
-            "purchaseAllowed": true,
-            "redemptionAllowed": true,
-            "displayProgramCurrencyAsDecimal": false,
-            "useVariableMilesFormula": false,
-            "shortfallAllowed": true
-        }
-    },
-    "programId": "1371",
-    "currency": "USD"
-    };
+    
 
     let response : any = {};
     response = {
-      "sessionId": "723c3073-e233-4462-b626-2d38a4d90ba6-HLNXT$1371"
+      "sessionId": ""
     }
 
     activityService.searchinit.and.callFake(()=>{
@@ -92,9 +73,7 @@ describe('ActivitySearchComponent', () => {
   });
 
   it('should call the activity search status and check if status is completed',()=>{
-    let sampleBody = {
-      "sessionId": "723c3073-e233-4462-b626-2d38a4d90ba6-HLNXT$1371"
-    }
+    
 
     let response = {
       "status": "Completed",
@@ -112,15 +91,7 @@ describe('ActivitySearchComponent', () => {
   });
 
   it('should call activity search result function and get a valid response',()=>{
-    let sampleBody = {
-      "paging": {
-        "pageNo": 1,
-        "pageSize": 30,
-        "orderBy": "price"
-      },
-      "sessionId": "",
-      "currency": "USD"
-    }
+    
 
     let response = {
       "sessionId" : "",
@@ -134,7 +105,18 @@ describe('ActivitySearchComponent', () => {
     fixture.detectChanges();
     expect(response.sessionId).toBe("");
   })
+  it('should call delay funciton',()=>{
+    
+    let data=1000
+    let response = {
+      "sessionId" : "",
+      "activities" : []
+    }
 
+    component.delay(data);
+    fixture.detectChanges();
+    // expect(response.sessionId).toBe("");
+  })
 });
 
 

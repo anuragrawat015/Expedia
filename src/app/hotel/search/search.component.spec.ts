@@ -7,24 +7,42 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import {  SearchComponentHotel } from './search.component';
 import { of } from 'rxjs';
 import { SearchService } from './search.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 describe('hotelSearchComponent', () => {
   let component: SearchComponentHotel;
   let fixture: ComponentFixture<SearchComponentHotel>;
   let hotelService : jasmine.SpyObj<SearchService> = jasmine.createSpyObj("hotelService",["searchinit","searchstatus","searchresult"]);
+  // beforeEach(async () => {
+  //   await TestBed.configureTestingModule({
+  //     imports : [HttpClientTestingModule],
+  //     declarations: [ SearchService ],
+  //     providers : [
+  //       {
+  //         provide : SearchService,
+  //         useValue : hotelService
+  //       }
+  //     ]
+  //   })
+  //   .compileComponents();
+  //   fixture = TestBed.createComponent(SearchComponentHotel);
+  //   component = fixture.componentInstance;
+  //   fixture.detectChanges();
+  // });
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports : [HttpClientTestingModule],
-      declarations: [ SearchService ],
+      declarations: [ SearchComponentHotel ],
+      imports : [
+          HttpClientTestingModule,
+          ReactiveFormsModule,
+          FormsModule],
       providers : [
-        {
-          provide : SearchService,
-          useValue : hotelService
-        }
+        SearchService
       ]
     })
     .compileComponents();
+    
     fixture = TestBed.createComponent(SearchComponentHotel);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -39,7 +57,7 @@ describe('hotelSearchComponent', () => {
 
     let response : any = {};
     response = {
-      "sessionId": "723c3073-e233-4462-b626-2d38a4d90ba6-HLNXT$1371"
+      "sessionId": ""
     }
 
     hotelService.searchinit.and.callFake(()=>{
@@ -84,6 +102,19 @@ describe('hotelSearchComponent', () => {
     component.searchresult();
     fixture.detectChanges();
     expect(response.sessionId).toBe("");
+  })
+
+  it('should call delay funciton',()=>{
+    
+    let data=1000
+    let response = {
+      "sessionId" : "",
+      "activities" : []
+    }
+
+    component.delay(data);
+    fixture.detectChanges();
+    // expect(response.sessionId).toBe("");
   })
 
 });
