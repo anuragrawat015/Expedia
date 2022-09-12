@@ -1,6 +1,8 @@
 # Expedia
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
+![Screenshot (175)](https://user-images.githubusercontent.com/68148139/189572007-d23f9582-ae82-4266-8420-7ed328d84d32.png)
+![Screenshot (176)](https://user-images.githubusercontent.com/68148139/189572041-2e9d6cc3-352a-45cd-9cb2-d8fb2761d130.png)
 
 ## Development server
 
