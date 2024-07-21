@@ -1,0 +1,58 @@
+<mat-card class="holiday-card" *ngFor="let package of holidayPackages">
+    <mat-card-title>{{ package.holidayPackage.traveler.name }}'s Holiday Package</mat-card-title>
+    <mat-card-content>
+      <div class="row">
+        <div class="column">
+          <h3>Flight Details</h3>
+          <div *ngFor="let flight of package.holidayPackage.flights">
+            <p>Flight Number: {{ flight.flightNumber }}</p>
+            <p>Airline: {{ flight.airline }}</p>
+            <p>Departure: {{ flight.departure.city }} ({{ flight.departure.airport }})</p>
+            <p>Arrival: {{ flight.arrival.city }} ({{ flight.arrival.airport }})</p>
+            <p>Date: {{ flight.departure.dateTime | date: 'short' }}</p>
+            <p>Class: {{ flight.class }}</p>
+            <p>Price: ${{ flight.price }}</p>
+          </div>
+        </div>
+        <div class="column">
+          <h3>Hotel Details</h3>
+          <div *ngFor="let hotel of package.holidayPackage.hotels">
+            <p>Hotel Name: {{ hotel.name }}</p>
+            <p>Address: {{ hotel.address }}</p>
+            <p>Check-In: {{ hotel.checkInDate }}</p>
+            <p>Check-Out: {{ hotel.checkOutDate }}</p>
+            <p>Room Type: {{ hotel.roomType }}</p>
+            <p>Price Per Night: ${{ hotel.pricePerNight }}</p>
+            <p>Total Price: ${{ hotel.totalPrice }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <h3>Activities</h3>
+          <div *ngFor="let activity of package.holidayPackage.activities">
+            <p>Activity Name: {{ activity.activityName }}</p>
+            <p>Date: {{ activity.date }}</p>
+            <p>Time: {{ activity.time }}</p>
+            <p>Price: ${{ activity.price }}</p>
+          </div>
+        </div>
+        <div class="column">
+          <h3>Car Rental</h3>
+          <p>Company: {{ package.holidayPackage.carRental.company }}</p>
+          <p>Pickup Location: {{ package.holidayPackage.carRental.pickupLocation }}</p>
+          <p>Pickup Date: {{ package.holidayPackage.carRental.pickupDateTime | date: 'short' }}</p>
+          <p>Dropoff Location: {{ package.holidayPackage.carRental.dropoffLocation }}</p>
+          <p>Dropoff Date: {{ package.holidayPackage.carRental.dropoffDateTime | date: 'short' }}</p>
+          <p>Car Type: {{ package.holidayPackage.carRental.carType }}</p>
+          <p>Price Per Day: ${{ package.holidayPackage.carRental.pricePerDay }}</p>
+          <p>Total Price: ${{ package.holidayPackage.carRental.totalPrice }}</p>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-footer>
+      <h3>Total Package Price: ${{ package.holidayPackage.totalPackagePrice }}</h3>
+    </mat-card-footer>
+  </mat-card>
+  
+  
