@@ -21,7 +21,7 @@ export class CarsearchComponent implements OnInit {
 
         
       const HOLIDAY_PACKAGES = [
-        {
+        { 
           id: "1",
           source: 'New York',
           destination: 'Paris',
