@@ -1,88 +1,260 @@
 <!-- <button class="about-view travel-btn" (click)="searchinit()">Search</button> -->
 <!--packages start-->
 <div *ngIf="!contentLoaded" class="spinner-border" role="status">
-  <span class="sr-only">Loading...</span>
+    <span class="sr-only">Loading...</span>
 </div>
 <div *ngIf="contentLoaded">
-  <section id="pack" class="packages">
-      <div class="container">
-          <div class="gallary-header text-center">
-              <h2>
-                  Search Results
-              </h2>
+    <section id="pack" class="packages">
+        <div class="container">
+            <div class="gallary-header text-center">
+                <h2>
+                    Search Results
+                </h2>
 
-          </div>
-          <!--/.gallery-header-->
-          <div class="packages-content">
-              <div class="row">
-                  <div *ngFor="let vehicle of finalresult">
-
-
-                      <div class="col-md-12 col-sm-6">
-                          <div class="single-package-item">
-                              <img src={{vehicle.images[0]}} alt="package-place">
-                              <div class="single-package-item-txt">
-                                  <h3>{{vehicle.name}}</h3>
-                                  
-                                  <div class="packages-para">
-                                      <p>
-                                          <span>
-                                              <i class="fa fa-angle-right"></i>
-                                          </span>
-                                          <strong>Passenger Capacity</strong>
-                                          {{ vehicle.passengerCapacity }}
-                                          <!-- <i class="fa fa-angle-right"></i>   -->
-                                      </p>
-                                      <p>
-                                          <span>
-                                              <i class="fa fa-angle-right"></i>
-                                          </span>
-                                          <strong>Baggage Capacity</strong>
-                                    {{  vehicle.baggageCapacity}}
-                                          <!-- <i class="fa fa-angle-right"></i>  food facilities -->
-                                      </p>
-                                      <p>
-                                          <span>
-                                              <i class="fa fa-angle-right"></i>
-                                          </span>
-                                          <strong>Baggage Capacity</strong>
-                                    {{  vehicle.baggageCapacity}}
-                                          <!-- <i class="fa fa-angle-right"></i>  food facilities -->
-                                      </p>
-                                      <p>
-                                          <span>
-                                              <i class="fa fa-angle-right"></i>
-                                          </span>
-                                          <strong>Type:</strong>
-                                    {{ vehicle.type }}
-                                          <!-- <i class="fa fa-angle-right"></i>  food facilities -->
-                                      </p>
-                                      <p>
-                                      <span><i class="fa fa-angle-right"></i></span>
-                                      <strong>Transmission:</strong> {{ vehicle.transmission }}
-                                  </p>
-                                  </div>
-                                 
-                              </div>
-                              <!--/.single-package-item-txt-->
-                          </div>
-                          
-
-                      </div>
-                      <!--/.col-->
-                  </div>
-
-
-
+            </div>
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+              
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
               </div>
-              <!--/.row-->
-          </div>
-          <!--/.packages-content-->
-      </div>
-      <!--/.container-->
+              
+                    <div class="packageCardWrapper similarPackage">
+                        <div class="similarPackTab"><span>1 More Option Available</span></div>
+                        <div class="imageCardWrapper">
+                            <div class="imageSlider">
+                                <div class="slick-slider slick-initialized">
+                                    <div class="slick-list">
+                                        <div class="slick-track"
+                                            style="width: 415px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
+                                            <div data-index="0" class="slick-slide slick-active slick-current"
+                                                tabindex="-1" aria-hidden="false" style="outline: none; width: 415px;">
+                                                <div>
+                                                    <div class="lazyload-wrapper ">
+                                                        <div class="imageLoaderContainer "
+                                                            style="width: 414px; height: 200px;">
+                                                            <img class=" active " width="414" height="200"
+                                                                src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1339/Romantic beach getaways.jpg"
+                                                                alt="Package Image">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="packageTextContainer">
+                            <div class="packageTopSection">
+                                <div class="titleWrapper">
+                                    <p title="Memorable Vacation in Andamans- Soulmate Special" class="packageHead">
+                                        Memorable
+                                        Vacation in Andamans- Soulmate Special</p><span class="selected">5N/6D</span>
+                                </div>
+                                <div class="itineraryList"><span>1N Port Blair</span><span>2N Havelock</span><span>1N
+                                        Neil
+                                        Island</span><span>1N Port Blair</span></div>
+                                <ul class="tripListWrapper">
+                                    <li>Round Trip Flights</li>
+                                    <li>Intercity Car Transfers</li>
+                                    <li>3 Star Hotels</li>
+                                    <li>Airport Transfers</li>
+                                    <li>16 Activities</li>
+                                    <li>Selected Meals</li>
+                                </ul>
+                                <ul class="visitListWrapper">
+                                    <li style="color: rgb(0, 126, 125);"><img class="highlight-icon"
+                                            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/phonixImages/highlights_tick3x.png"
+                                            alt="Highlight Icon">Visit to Radhanagar Beach, Elephant Beach, Corbyn's
+                                        Cove
+                                    </li>
+                                    <li style="color: rgb(0, 126, 125);"><img class="highlight-icon"
+                                            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/phonixImages/highlights_tick3x.png"
+                                            alt="Highlight Icon">Water Sports</li>
+                                    <li style="color: rgb(0, 126, 125);"><img class="highlight-icon"
+                                            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/phonixImages/highlights_tick3x.png"
+                                            alt="Highlight Icon">Half Day Adventure</li>
+                                </ul>
+                            </div>
 
-  </section>
-  <!--/.packages-->
-  <!--packages end-->
+
+                            <div class="packageBottomSection">
+                                <div class="includeWrapper">
+                                    <div class="includeItemCard"><span class="leftSec"><span class="">Includes
+                                                extra</span><span class="bold"> ₹5,113</span><span class=""> discount
+                                                for
+                                                packages with
+                                                flights</span></span>
+                                        <div class="rightSec">
+                                            <p><span class="priceStyle">₹68,613</span><span> /Person</span></p>
+                                            <p><span>Total Price</span><span> ₹1,37,226</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button routerLink="hotelsearch" class="about-view travel-btn">
+                            search
+                        </button>
+                    </div>
+                    <div class="packageCardWrapper ">
+                        <div class="imageCardWrapper">
+                            <div class="imageSlider">
+                                <div class="slick-slider slick-initialized">
+                                    <div class="slick-list">
+                                        <div class="slick-track"
+                                            style="width: 415px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
+                                            <div data-index="0" class="slick-slide slick-active slick-current"
+                                                tabindex="-1" aria-hidden="false" style="outline: none; width: 415px;">
+                                                <div>
+                                                    <div class="lazyload-wrapper ">
+                                                        <div class="imageLoaderContainer "
+                                                            style="width: 414px; height: 200px;">
+                                                            <img class=" active " width="414" height="200"
+                                                                src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/3872/Havelock_2.jpg"
+                                                                alt="Package Image">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="packageTextContainer">
+                            <div class="packageTopSection">
+                                <div class="titleWrapper">
+                                    <p title="Summer Sale Special with Complimentary Activities" class="packageHead">
+                                        Summer
+                                        Sale
+                                        Special with Complimentary Activities</p><span class="selected">5N/6D</span>
+                                </div>
+                                <div class="itineraryList"><span>1N Port Blair</span><span>2N Havelock</span><span>1N
+                                        Neil
+                                        Island</span><span>1N Port Blair</span></div>
+                                <ul class="tripListWrapper">
+                                    <li>Round Trip Flights</li>
+                                    <li>Intercity Car Transfers</li>
+                                    <li>3 Star Hotels</li>
+                                    <li>Airport Transfers</li>
+                                    <li>18 Activities</li>
+                                    <li>Selected Meals</li>
+                                </ul>
+                                <ul class="visitListWrapper">
+                                    <li style="color: rgb(0, 126, 125);"><img class="highlight-icon"
+                                            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/phonixImages/highlights_tick3x.png"
+                                            alt="Highlight Icon">Light and Sound Show</li>
+                                    <li style="color: rgb(0, 126, 125);"><img class="highlight-icon"
+                                            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/phonixImages/highlights_tick3x.png"
+                                            alt="Highlight Icon">Departure Gift</li>
+                                    <li style="color: rgb(0, 126, 125);"><img class="highlight-icon"
+                                            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/phonixImages/highlights_tick3x.png"
+                                            alt="Highlight Icon">Tour Manager</li>
+                                </ul>
+                            </div>
+                            <div class="packageBottomSection">
+                                <div class="includeWrapper">
+                                    <div class="includeItemCard"><span class="leftSec"><span class="">Includes
+                                                extra</span><span class="bold"> ₹3,706</span><span class=""> discount
+                                                for
+                                                packages with
+                                                flights</span></span>
+                                        <div class="rightSec">
+                                            <p><span class="priceStyle">₹49,727</span><span> /Person</span></p>
+                                            <p><span>Total Price</span><span> ₹99,454</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.packages-content-->
+                    <div class="packageCardWrapper similarPackage">
+                        <div class="similarPackTab"><span>1 More Option Available</span></div>
+                        <div class="imageCardWrapper">
+                            <div class="imageSlider">
+                                <div class="slick-slider slick-initialized">
+                                    <div class="slick-list">
+                                        <div class="slick-track"
+                                            style="width: 415px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
+                                            <div data-index="0" class="slick-slide slick-active slick-current"
+                                                tabindex="-1" aria-hidden="false" style="outline: none; width: 415px;">
+                                                <div>
+                                                    <div class="lazyload-wrapper ">
+                                                        <div class="imageLoaderContainer "
+                                                            style="width: 414px; height: 200px;">
+                                                            <img class=" active " width="414" height="200"
+                                                                src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1339/Port Blair and Havelock in 4 nights with Ross Island.jpg"
+                                                                alt="Package Image">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="packageTextContainer">
+                            <div class="packageTopSection">
+                                <div class="titleWrapper">
+                                    <p title="Best of Andaman - Standard" class="packageHead">Best of Andaman - Standard
+                                    </p>
+                                    <span class="selected">5N/6D</span>
+                                </div>
+                                <div class="itineraryList"><span>1N Port Blair</span><span>2N Havelock</span><span>1N
+                                        Neil
+                                        Island</span><span>1N Port Blair</span></div>
+                                <ul class="tripListWrapper">
+                                    <li>Round Trip Flights</li>
+                                    <li>Intercity Car Transfers</li>
+                                    <li>3 Star Hotels</li>
+                                    <li>Airport Transfers</li>
+                                    <li>11 Activities</li>
+                                    <li>Selected Meals</li>
+                                </ul>
+                                <ul class="visitListWrapper">
+                                    <li style="color: rgb(0, 126, 125);"><img class="highlight-icon"
+                                            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/phonixImages/highlights_tick3x.png"
+                                            alt="Highlight Icon">Visit to Radhanagar Beach, Elephant Beach, Corbyn's
+                                        Cove
+                                    </li>
+                                    <li style="color: rgb(0, 126, 125);"><img class="highlight-icon"
+                                            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/phonixImages/highlights_tick3x.png"
+                                            alt="Highlight Icon">Half Day Adventure</li>
+                                    <li style="color: rgb(0, 126, 125);"><img class="highlight-icon"
+                                            src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/phonixImages/highlights_tick3x.png"
+                                            alt="Highlight Icon">Tour Manager</li>
+                                </ul>
+                            </div>
+                            <div class="packageBottomSection">
+                                <div class="includeWrapper">
+                                    <div class="includeItemCard"><span class="leftSec"><span class="">Includes
+                                                extra</span><span class="bold"> ₹4,669</span><span class=""> discount
+                                                for
+                                                packages with
+                                                flights</span></span>
+                                        <div class="rightSec">
+                                            <p><span class="priceStyle">₹62,654</span><span> /Person</span></p>
+                                            <p><span>Total Price</span><span> ₹1,25,308</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+        </div>
+        <!--/.container-->
+
+    </section>
+    <!--/.packages-->
+    <!--packages end-->
 
 </div>

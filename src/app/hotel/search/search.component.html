@@ -8,91 +8,12 @@
         <div class="container">
             <div class="gallary-header text-center">
                 <h2>
-                    Search Results
+                    PACKAGE RESULT
                 </h2>
 
             </div>
-            <!--/.gallery-header-->
-            <div class="packages-content">
-                <div class="row">
-                    <div *ngFor="let r of finalresult">
-
-
-                        <div class="col-md-12 col-sm-6">
-                            <div class="single-package-item">
-                                <img src={{r.content.heroImage.url}} alt="package-place">
-                                <div class="single-package-item-txt">
-                                    <h3>{{r.name}}</h3>
-                                    <h5>{{r.content.contact.address.city.name}} ,
-                                        {{r.content.contact.address.state.name}} ,
-                                        {{r.content.contact.address.countryCode}}</h5>
-                                    <div class="packages-para">
-                                        <p>
-                                            <span>
-                                                <i class="fa fa-angle-right"></i>
-                                            </span>
-                                            <!-- <i class="fa fa-angle-right"></i>   -->
-                                        </p>
-                                        <p>
-                                            <span>
-                                                <i class="fa fa-angle-right"></i>
-                                            </span>
-                                            <!-- <i class="fa fa-angle-right"></i>  food facilities -->
-                                        </p>
-                                        <p>
-                                            <span>
-                                                <i class="fa fa-angle-right"></i>
-                                            </span>
-                                            <!-- <i class="fa fa-angle-right"></i>  food facilities -->
-                                        </p>
-                                        <p>
-                                            <span>
-                                                <i class="fa fa-angle-right"></i>
-                                            </span>
-                                            <!-- <i class="fa fa-angle-right"></i>  food facilities -->
-                                        </p>
-                                        <!-- <p>
-                                        <span><i class="fa fa-angle-right"></i>Book at ${{r.displayFare.totalFareStartsFrom}}</span>
-                                        
-                                    </p> -->
-                                    </div>
-                                    <!--/.packages-para-->
-                                    <!-- <div class="packages-review">
-                                    <p>
-                                        <span><i class="fa fa-angle-right"></i>Book at ${{r.displayFare.totalFareStartsFrom}}</span>
-                                         <span>{{r.content.reviewCount}} review</span> 
-                                    </p>
-                                </div> -->
-                                    <div class="about-btn"><button class="about-view packages-btn">
-                                            book1
-                                        </button></div>
-                                    <div class="about-btn">
-
-                                        <button class="about-view packages-btn">
-                                            book now
-                                        </button>
-                                    </div>
-                                    <!--/.about-btn-->
-                                </div>
-                                <!--/.single-package-item-txt-->
-                            </div>
-                            <!--/.single-package-item-->
-
-                        </div>
-                        <!--/.col-->
-                    </div>
-
-
-
-                </div>
-                <!--/.row-->
-            </div>
-            <!--/.packages-content-->
         </div>
-        <!--/.container-->
 
     </section>
-    <!--/.packages-->
-    <!--packages end-->
 
 </div>

@@ -21,7 +21,7 @@ export class SearchComponentHotel implements OnInit {
   ngOnInit(): void {
 
        
-      this.searchinit();
+      //this.searchinit();
       
 
   }

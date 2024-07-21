@@ -12,6 +12,13 @@
         <ul class="nav nav-tabs" role="tablist">
   
           <li role="presentation" class="active">
+            <a href="#car" aria-controls="car" role="tab" data-toggle="tab">
+              
+               car
+               <!-- <i class="fa fa-plane "></i> -->
+            </a>
+         </li>
+          <li role="presentation">
              <a href="#tours" aria-controls="tours" role="tab" data-toggle="tab">
                
                Activities
@@ -30,13 +37,7 @@
             </a>
           </li>
   
-          <li role="presentation">
-             <a href="#car" aria-controls="car" role="tab" data-toggle="tab">
-               
-                car
-                <!-- <i class="fa fa-plane "></i> -->
-             </a>
-          </li>
+         
         </ul>
   
         <!-- Tab panes -->
@@ -45,7 +46,7 @@
   
   <div class="tab-content">
   
-    <div role="tabpanel" class="tab-pane active fade in" id="tours">
+    <div role="tabpanel" class="tab-pane fade in" id="tours">
       <div class="tab-para">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12">
@@ -235,7 +236,7 @@
       </div><!--/.tab-para-->
     </div><!--/.tabpannel-->
     
-    <div role="tabpanel" class="tab-pane fade in" id="car">
+    <div role="tabpanel" class="tab-pane active fade in" id="car">
       <div class="tab-para">
         
         <div class="row">
@@ -278,7 +279,6 @@
                 <input [(ngModel)]="pickupDate" (change)="setVal()" type="date" name="check_in" class="form-control"  placeholder="12 -01 - 2017 ">
                 
               </p>
-              <h1>{{pickupDate}}</h1>
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4">
@@ -289,7 +289,7 @@
                 <input [(ngModel)]="pickupTime" (change)="setVal1()" type="time" name="check_in_time" class="form-control"  placeholder="10:00 ">
                 
               </p>
-              <h1>{{pickupTime}}</h1>
+            
             </div>
           </div>
   
@@ -299,7 +299,7 @@
               <p>
                 <input [(ngModel)]="dropupDate" (change)="setVal()" type="date"  name="check_out" class="form-control"   placeholder="22 -01 - 2017 ">
               </p>
-              <h1>{{dropupDate}}</h1>
+             
             </div>
           </div>
           <div class="col-lg-2 col-md-3 col-sm-4">
@@ -310,7 +310,6 @@
                 <input [(ngModel)]="dropupTime" (change)="setVal1()" type="time" name="check_out_time" class="form-control"  placeholder="10:00 ">
                 
               </p>
-              <h1>{{dropupTime}}</h1>
             </div>
           </div>
           <div class="col-lg-2 col-md-1 col-sm-4">

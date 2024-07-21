@@ -15,70 +15,36 @@ export class CarsearchComponent implements OnInit {
     public responseSearchInit: any = {
       "sessionId": ""
     };
+
+    
     ngOnInit(): void {
 
         
-        
-      this.searchinit()
-
-    }
-
-    // Create()
-    // {
-    //   this.service.Create().subscribe((result:any)=>{
-    //     //console.log("helo")
-    //     console.log(result)
-    //     //this.parentservice.transitCode=result.transitCode
-    //     //this.searchinit()
-    //   })
-    // }
-    searchinit()
-    {
-        this.service.searchinit().subscribe((result:any)=>{
-        console.log(result)
-        this.parentservice.globalSessionId=result.sessionId
-        this.searchstatus()
-      })
-    }
-
-
-
-
-    delay(ms: any) {
-
-      return new Promise(res => setTimeout(res, ms));
-
-    }
-    searchstatus()
-    {
-      this.service.searchstatus().subscribe(async (result:any)=>
+      const HOLIDAY_PACKAGES = [
         {
-          console.log(result)
-          if (result.status == 'Completed') {
-            console.log("status completed")
-            this.searchresult()
-
-          } else if (result.status == 'InProgress') {
-
-            
-            await this.delay(5000);
-            this.searchstatus()
-
-          }
-          
-        })
-    }
-    searchresult()
-    {
+          id: "1",
+          source: 'New York',
+          destination: 'Paris',
+          departureDate: '2024-08-01',
+          returnDate: '2024-08-15',
+          flights: [
+            { id: 1, airline: 'Air France', flightNumber: 'AF123' },
+            { id: 2, airline: 'Delta Airlines', flightNumber: 'DL456' }
+          ],
+          hotels: [
+            { id: 1, name: 'Hotel Le Meurice', stars: 5 },
+            { id: 2, name: 'Hotel Lutetia', stars: 5 }
+          ],
+          activities: [
+            { id: 1, name: 'Eiffel Tower Tour', duration: '2 hours' },
+            { id: 2, name: 'Louvre Museum', duration: '4 hours' }
+          ]
+        }
+        // Add more packages as needed
+      ];
       
-      this.service.searchresult().subscribe((result:any)=>
-        {
-          
-          this.finalresult=result.vehicles
-          console.log(this.finalresult)
-          this.contentLoaded=true
-        })
-       
+      this.finalresult = HOLIDAY_PACKAGES
+      this.contentLoaded=true
 
     }
 
